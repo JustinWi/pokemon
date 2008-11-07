@@ -1,0 +1,11 @@
+*.csproj.user
+*.suo
+*~
+_ReSharper.*
+*.resharper.user
+.svn
+*.sln.cache
+*.swp
+obj
+
+App.config

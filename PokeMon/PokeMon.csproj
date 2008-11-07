@@ -1,0 +1,155 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CCC00065-6BF8-4232-9546-17DE621E19CA}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PokeMon</RootNamespace>
+    <AssemblyName>PokeMon</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <ManifestCertificateThumbprint>BBF970585D85B308236A59754DC9B70E72D46C36</ManifestCertificateThumbprint>
+    <ManifestKeyFile>PokeMon_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Action.cs" />
+    <Compile Include="Driver.cs" />
+    <Compile Include="HeartbeatService\HeartbeatService.cs" />
+    <Compile Include="HeartbeatService\HeartbeatServiceHost.cs" />
+    <Compile Include="HeartbeatService\IHeartbeatService.cs" />
+    <Compile Include="Notifiers\ExampleNotifier.cs" />
+    <Compile Include="Notifiers\Notifiable.cs" />
+    <Compile Include="Settings\ActionSettings.cs" />
+    <Compile Include="Notifiers\ConsoleNotifier.cs" />
+    <Compile Include="Settings\ConfigPokerSettings.cs" />
+    <Compile Include="Settings\ConfigPokerCollection.cs" />
+    <Compile Include="HeartbeatService\HeartbeatServiceSettings.cs" />
+    <Compile Include="Settings\MbUnitPokerCollection.cs" />
+    <Compile Include="Settings\MbUnitPokerSettings.cs" />
+    <Compile Include="Settings\FtpFilePokerCollection.cs" />
+    <Compile Include="Settings\FtpFilePokerSettings.cs" />
+    <Compile Include="Settings\FtpAuditPokerCollection.cs" />
+    <Compile Include="Settings\FtpAuditPokerSettings.cs" />
+    <Compile Include="Settings\ExamplePokerCollection.cs" />
+    <Compile Include="Settings\ExamplePokerSettings.cs" />
+    <Compile Include="Settings\ParameterCollection.cs" />
+    <Compile Include="Settings\ParameterSettings.cs" />
+    <Compile Include="Settings\WebservicePokerSettings.cs" />
+    <Compile Include="Settings\WebservicePokerCollection.cs" />
+    <Compile Include="Settings\MonitorSettings.cs" />
+    <Compile Include="Settings\WebsitePokerCollection.cs" />
+    <Compile Include="Settings\WebsitePokerSettings.cs" />
+    <Compile Include="Notifiers\SMSNotifier.cs" />
+    <Compile Include="Notifiers\EmailNotifier.cs" />
+    <Compile Include="Settings\NotificationSettings.cs" />
+    <Compile Include="Notifiers\Notifier.cs" />
+    <Compile Include="Tasks\PokeMbUnitTestTask.cs" />
+    <Compile Include="Tasks\PokeConfig.cs" />
+    <Compile Include="Tasks\PokeFtpFileTask.cs" />
+    <Compile Include="Tasks\PokeFtpAuditTask.cs" />
+    <Compile Include="Tasks\FtpClient.cs" />
+    <Compile Include="Tasks\PokeExampleTask.cs" />
+    <Compile Include="Tasks\PokeWebserviceTask.cs" />
+    <Compile Include="Tasks\PokeWebsiteTask.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Result.cs" />
+    <Compile Include="Tasks\Task.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="SimpleSample.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FtpClient\FtpClient.csproj">
+      <Project>{BDEA44D8-A430-4862-B84B-B9331AA8E742}</Project>
+      <Name>FtpClient</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
